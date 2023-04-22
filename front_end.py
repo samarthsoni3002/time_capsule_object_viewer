@@ -8,15 +8,35 @@ app = customtkinter.CTk()
 app.geometry("1000X1000")
 app.title("Time Capsule Object Viewer")
 
-app.resizable(False,False)
 
-img = Image.open('./bgimage3.jpg')
-im = img.resize((1000,1000))
+def button_event():
+    print("button pressed")
 
+button1 = customtkinter.CTkButton(master=app,  
+                                 width=400,
+                                 height=100,
+                                 border_width=0,
+                                 corner_radius=8,
+                                 text="HOME",
+                                 command=button_event) 
+button1.grid(row=0, column=0, padx=10, pady=350)
+button2 = customtkinter.CTkButton(master=app,  
+                                 width=400,
+                                 height=100,
+                                 border_width=0,
+                                 corner_radius=8,
+                                 text="RELIVE THE PAST",
+                                 command=button_event) 
 
-bg_image = ImageTk.PhotoImage(im)
-bg = Canvas(app, width=1000, height=1000)
-bg.pack(fill=BOTH, expand=YES)
-bg.create_image(0,0,image=bg_image,anchor=NW)
+button2.grid(row=0, column=1, padx=20, pady=350)
+button3 = customtkinter.CTkButton(master=app,  
+                                 width=400,
+                                 height=100,
+                                 border_width=0,
+                                 corner_radius=8,
+                                 text="DIVE INTO THE FUTURE",
+                                 command=button_event) 
+
+button3.grid(row=0, column=2, padx=20, pady=350)
 
 app.mainloop()
