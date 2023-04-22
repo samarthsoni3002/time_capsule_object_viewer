@@ -7,7 +7,7 @@ from time import sleep
 from duckduckgo_search import ddg_images
 from fastcore.all import * 
 
-def search_images(temp, max_images=300):
+def search_images(temp, max_images=3):
     return L((ddg_images(temp,max_results=max_images))).itemgot("image")
 
 
@@ -23,7 +23,7 @@ def future_images(im):
     destination.mkdir(exsist_ok = True, parent=True)
     download_images(destination, urls=(f"Futuristic images of {im}"))
     sleep(10)
-    resize_images(path/im, max_sizes= 400, path/im)
+    resize_images(path/im, max_sizes= 400, destination = path/im)
 
 
 def old_images(im):
@@ -33,5 +33,7 @@ def old_images(im):
     destination.mkdir(exsist_ok = True, parent=True)
     download_images(destination, urls=(f"old images of {im}"))
     sleep(10)
-    resize_images(path/im, max_sizes= 400, path/im)
+    resize_images(path/im, max_sizes= 400, destination = path/im)
 
+
+future_images(im)
