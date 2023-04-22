@@ -14,10 +14,24 @@ def search_images(temp, max_images=300):
 im = input("Enter object you want to see the images of:- ")
 number = int(input("Enter the number of images:- "))
 
-search = im
-path = Path(im)
-destination = (path/search)
-destination.mkdir(exsist_ok = True, parent=True)
-download_images(destination, urls=(f"Futuristic images of {im}"))
-sleep(10)
-resize_images(path/im, max_sizes= 400, path/im)
+
+def future_images(im):
+
+    search = im
+    path = Path(path/photos)
+    destination = (path/search)
+    destination.mkdir(exsist_ok = True, parent=True)
+    download_images(destination, urls=(f"Futuristic images of {im}"))
+    sleep(10)
+    resize_images(path/im, max_sizes= 400, path/im)
+
+
+def old_images(im):
+    search = im
+    path = Path(path/photos)
+    destination = (path/search)
+    destination.mkdir(exsist_ok = True, parent=True)
+    download_images(destination, urls=(f"old images of {im}"))
+    sleep(10)
+    resize_images(path/im, max_sizes= 400, path/im)
+
