@@ -1,12 +1,14 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
+from backend_new import *
+from random import *
 
 
 def future_window():
     main = Toplevel()
-    canvas = Canvas(main, height=800, width=1000)
-   
+    main.geometry("1000x800")
+    
     
     heading = Label(main, text="\nLets go into the future", bg='#ADD8E6',font=("Helvetica", 24))
     heading.pack() 
@@ -22,6 +24,17 @@ def future_window():
     def printValue():
         pname = player_name.get()
         Label(main, text=f'{pname}, Searching!', pady=20, bg='#ADD8E6').pack()
+        futuristic_images(pname)
+        
+        no = randint(1,10)
+        im = ImageTk.PhotoImage(Image.open(f"./{pname}_images/{pname}_{no}.jpg"))
+
+        label1 = Label(main,image=im)
+        label1.image = im
+        label1.pack()
+
+       
+
 
 
     player_name = Entry(main)
@@ -34,7 +47,7 @@ def future_window():
         pady=5,
         command=printValue
         ).pack()
-    canvas.pack()
+   
 
 def past_window():
     main = Toplevel()
