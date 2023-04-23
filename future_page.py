@@ -5,14 +5,17 @@ from tkinter import *
 main = tk.Tk()
 
 
+bg = PhotoImage(file="./future.png")
 
-
+my_canvas = Canvas(main)
+my_canvas.pack(fill="both", expand=True)
+my_canvas.create_image(0, 0, image=bg, anchor="nw")
 
 
 
 
 # Create the heading
-heading = tk.Label(main, text="\nLets go into the future", bg='#ADD8E6',font=("Helvetica", 24))
+heading = tk.Label(main, text="\nLets go into the future",font=("Helvetica", 24))
 heading.pack() 
 
 heading = tk.Label(main, text="\nPlease enter the name of the object", bg='#ADD8E6',font=("Helvetica", 24))

@@ -1,1 +1,1 @@
-
+"./future_new.jpg"

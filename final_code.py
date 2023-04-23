@@ -9,6 +9,14 @@ def future_window():
     main = Toplevel()
     main.geometry("1000x800")
     
+    bgf = ImageTk.PhotoImage(Image.open("./future_new.jpg"))
+    
+    new_canvas = Canvas(main)
+    new_canvas.pack(fill="both", expand=True)
+    new_canvas.create_image(0, 0, image=bgf, anchor="nw")
+
+    new_canvas.create_text(400, 250, text="\nLets go into the future", font=("Georgia", 20))
+    
     
     heading = Label(main, text="\nLets go into the future", bg='#ADD8E6',font=("Helvetica", 24))
     heading.pack() 
