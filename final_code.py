@@ -20,9 +20,16 @@ def future_window():
     main.title("")
     main.geometry('900x700')
     main['bg'] = '#ADD8E6'
+
+    im = ImageTk.PhotoImage(Image.open(""))
+
+    label1 = Label(main,image=im)
+    label1.image = im
+    label1.pack()
  
 
-    
+    def back_to_home():
+        main.destroy()
     
 
     def printValue():
@@ -45,10 +52,18 @@ def future_window():
 
     Button(
         main,
-        text="Lets go into the future", 
+        text="Lets go into the future to save marty's kid from going to jail", 
         padx=10, 
         pady=5,
         command=printValue
+        ).pack()
+   
+    Button(
+        main,
+        text="Go to the home page", 
+        padx=15, 
+        pady=5,
+        command=back_to_home
         ).pack()
    
 
@@ -56,6 +71,8 @@ def past_window():
     main = Toplevel()
     main.geometry("1000x800")
     
+    def back_to_home():
+        main.destroy()
     
     heading = Label(main, text="\nRelive the past", bg='#ADD8E6',font=("Helvetica", 24))
     heading.pack() 
@@ -92,12 +109,20 @@ def past_window():
 
     Button(
         main,
-        text="Let's look back in the past", 
+        text="Let's time travel back in the past just like marty and doc ;)", 
         padx=10, 
         pady=5,
         command=printValue
         ).pack()
 
+    Button(
+        main,
+        text="Go to the home page", 
+        padx=15, 
+        pady=5,
+        command=back_to_home
+        ).pack()
+   
 
 root = Tk()
 root.title("TIME CAPSULE OBJECT VIEWER")
@@ -120,12 +145,25 @@ style.configure("TButton",
                 background="#4ca7b3",
                 foreground="#367077")
 
+
+
+def exit_window():
+    root.quit()
+
+
 button1 = ttk.Button(master=my_canvas,
                  text="RELIVE THE PAST",command = lambda:past_window())
 button1_window = my_canvas.create_window(0, 370, anchor="nw", window=button1, height=0, width=500)
 
+
+
 button3 = ttk.Button(master=my_canvas,
                  text="DIVE INTO THE FUTURE",command  = lambda:future_window())
 button3_window = my_canvas.create_window(500, 370, anchor="nw", window=button3, width=500)
+
+
+button2 = ttk.Button(master=my_canvas,
+                 text="Exit",command = lambda:exit_window())
+button2_window = my_canvas.create_window(250, 740, anchor="nw", window=button2, height=0, width=500)
 
 root.mainloop()
