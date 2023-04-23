@@ -9,14 +9,6 @@ def future_window():
     main = Toplevel()
     main.geometry("1000x800")
     
-    bgf = ImageTk.PhotoImage(Image.open("./future_new.jpg"))
-    
-    new_canvas = Canvas(main)
-    new_canvas.pack(fill="both", expand=True)
-    new_canvas.create_image(0, 0, image=bgf, anchor="nw")
-
-    new_canvas.create_text(400, 250, text="\nLets go into the future", font=("Georgia", 20))
-    
     
     heading = Label(main, text="\nLets go into the future", bg='#ADD8E6',font=("Helvetica", 24))
     heading.pack() 
@@ -29,12 +21,7 @@ def future_window():
     main.geometry('900x700')
     main['bg'] = '#ADD8E6'
 
-    im = ImageTk.PhotoImage(Image.open(""))
 
-    label1 = Label(main,image=im)
-    label1.image = im
-    label1.pack()
- 
 
     def back_to_home():
         main.destroy()
@@ -42,15 +29,24 @@ def future_window():
 
     def printValue():
         pname = player_name.get()
-        Label(main, text=f'{pname}, Searching!', pady=20, bg='#ADD8E6').pack()
+        Label(main,  pady=20, bg='#ADD8E6').pack()
+        
+        label3 = Label(main,text=f"Here is your futuristic image of a {pname}:- ").pack()
+
         futuristic_images(pname)
 
         no = randint(1,10)
-        im = ImageTk.PhotoImage(Image.open(f"./{pname}_images/{pname}_{no}.jpg"))
 
-        label1 = Label(main,image=im)
-        label1.image = im
-        label1.pack()
+        im = Image.open(f"./{pname}_images/{pname}_8.jpg")
+        
+        im = im.resize((400,300),Image.ANTIALIAS)
+
+        img2 = ImageTk.PhotoImage(im)
+
+        label1 = Label(main,image=img2)
+        label1.image = img2
+
+        label1.place(x=250,y=350)
 
        
 
@@ -99,11 +95,15 @@ def past_window():
 
     def printValue():
         pname = player_name.get()
-        Label(main, text=f'{pname}, Searching!', pady=20, bg='#ADD8E6').pack()
+        Label(main, pady=20, bg='#ADD8E6').pack()
         old_images(pname)
 
+        label3 = Label(main,text=f"This is how {pname} looked in the past:- ").pack()
+
         no = randint(1,10)
-        im = ImageTk.PhotoImage(Image.open(f"./{pname}_images/{pname}_{no}.jpg"))
+        im = Image.open(f"./{pname}_images/{pname}_{no}.jpg")
+        im = im.resize((400,300),Image.ANTIALIAS)
+        im = ImageTk.PhotoImage(im)
 
         label1 = Label(main,image=im)
         label1.image = im
