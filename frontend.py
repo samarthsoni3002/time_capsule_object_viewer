@@ -3,7 +3,7 @@ from tkinter import ttk
 
 root = Tk()
 root.title("TIME CAPSULE OBJECT VIEWER")
-root.geometry("1000x800")
+root.geometry("1000x800") 
 
 bg = PhotoImage(file="./TIME CAPSULE.png")
 bg2 = PhotoImage(file="./time.png")

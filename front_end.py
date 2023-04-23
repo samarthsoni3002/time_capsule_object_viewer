@@ -1,24 +1,53 @@
 from tkinter import *
 import customtkinter
-from PIL import ImageTk, Image
+from PIL import Image, ImageTk
 
-customtkinter.set_default_color_theme("blue")
 
 app = customtkinter.CTk()
-app.geometry("1000X1000")
+app.geometry("805x1000")
+app.resizable(0,0)
 app.title("Time Capsule Object Viewer")
+''' my_image = customtkinter.CTkImage(light_image=Image.open("<path to light mode image>"),
+                                  dark_image=Image.open("<path to dark mode image>"),
+                                  size=(30, 30))
+button = customtkinter.CTkButton(app, image=my_image) 
+image_label = customtkinter.CTkLabel(app, image=my_image)
+image_label.grid(row=0, column=0, padx=10, pady=10) '''
+frame = Frame(app, width=805, height=400)
+frame.pack()
+bg = ImageTk.PhotoImage(Image.open("./TIME CAPSULE.png"))
+label = Label(app,image=bg)
+label.place(x=0, y=0, anchor='nw')
 
+'''
+def button_event():
+    print("button pressed")
 
+button1 = customtkinter.CTkButton(master=app,  
+                                 width=400,
+                                 height=100,
+                                 border_width=0,
+                                 corner_radius=8,
+                                 text="HOME",
+                                 command=button_event) 
+button1.grid(row=0, column=0, padx=10, pady=350)
+button2 = customtkinter.CTkButton(master=app,  
+                                 width=400,
+                                 height=100,
+                                 border_width=0,
+                                 corner_radius=8,
+                                 text="RELIVE THE PAST",
+                                 command=button_event) 
 
-app.resizable(False,False)
+button2.grid(row=0, column=1, padx=20, pady=350)
+button3 = customtkinter.CTkButton(master=app,  
+                                 width=400,
+                                 height=100,
+                                 border_width=0,
+                                 corner_radius=8,
+                                 text="DIVE INTO THE FUTURE",
+                                 command=button_event) 
 
-img = Image.open('./bgimage3.jpg')
-im = img.resize((1000,1000))
-
-
-bg_image = ImageTk.PhotoImage(im)
-bg = Canvas(app, width=1000, height=1000)
-bg.pack(fill=BOTH, expand=YES)
-bg.create_image(0,0,image=bg_image,anchor=NW)
-
+button3.grid(row=0, column=2, padx=20, pady=350)
+'''
 app.mainloop()
