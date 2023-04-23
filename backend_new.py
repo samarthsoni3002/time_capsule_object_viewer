@@ -41,7 +41,9 @@ def futuristic_images(im):
 
 
 def old_images(im):
-    query = query = f'old {im} images'
+
+    hi = im
+    query = f'old {im} images '
     num_images = 10
 
 
@@ -53,8 +55,8 @@ def old_images(im):
     image_urls = [img.get('src') for img in soup.find_all('img', class_='mimg')]
 
 
-    if not os.path.exists(f'{query}'):
-        os.makedirs(f'{query}')
+    if not os.path.exists(f'{hi}_images'):
+        os.makedirs(f'{hi}_images')
 
 
     for i in range(num_images):
@@ -62,10 +64,9 @@ def old_images(im):
             url = image_urls[i]
             response = requests.get(url)
             img = Image.open(BytesIO(response.content))
-            file_path = os.path.join(f'{query}', f'{query}_{i+1}.jpg')
+            file_path = os.path.join(f'{hi}_images', f'{hi}_{i+1}.jpg')
             img.save(file_path)
             print(f'{file_path} downloaded successfully.')
         except Exception as e:
             print(f'Error downloading {url}: {e}')
-
 

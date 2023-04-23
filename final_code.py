@@ -28,12 +28,16 @@ def future_window():
     main.title("")
     main.geometry('900x700')
     main['bg'] = '#ADD8E6'
+ 
+
+    
+    
 
     def printValue():
         pname = player_name.get()
         Label(main, text=f'{pname}, Searching!', pady=20, bg='#ADD8E6').pack()
         futuristic_images(pname)
-        
+
         no = randint(1,10)
         im = ImageTk.PhotoImage(Image.open(f"./{pname}_images/{pname}_{no}.jpg"))
 
@@ -42,7 +46,6 @@ def future_window():
         label1.pack()
 
        
-
 
 
     player_name = Entry(main)
@@ -59,24 +62,37 @@ def future_window():
 
 def past_window():
     main = Toplevel()
-    canvas = Canvas(main, height=800, width=1000)
-    heading = Label(main, text="\nRelive the Past", bg='#ffbf00',font=("Helvetica", 24))
-    heading.pack()  
+    main.geometry("1000x800")
+    
+    
+    heading = Label(main, text="\nRelive the past", bg='#ADD8E6',font=("Helvetica", 24))
+    heading.pack() 
 
-
-
-
-    heading = Label(main, text="\nPlease enter the name of the object", bg='#ffbf00',font=("Helvetica", 24))
+    heading = Label(main, text="\nPlease enter the name of the object", bg='#ADD8E6',font=("Helvetica", 24))
     heading.pack()
     
 
     main.title("")
     main.geometry('900x700')
-    main['bg'] = '#ffbf00'
+    main['bg'] = '#ADD8E6'
+ 
+
+    
+    
 
     def printValue():
         pname = player_name.get()
-        Label(main, text=f'{pname}, Searching!', pady=20, bg='#ffbf00').pack()
+        Label(main, text=f'{pname}, Searching!', pady=20, bg='#ADD8E6').pack()
+        old_images(pname)
+
+        no = randint(1,10)
+        im = ImageTk.PhotoImage(Image.open(f"./{pname}_images/{pname}_{no}.jpg"))
+
+        label1 = Label(main,image=im)
+        label1.image = im
+        label1.pack()
+
+       
 
 
     player_name = Entry(main)
@@ -84,13 +100,11 @@ def past_window():
 
     Button(
         main,
-        text="Relive The Past", 
+        text="Let's look back in the past", 
         padx=10, 
         pady=5,
         command=printValue
         ).pack()
-
-    canvas.pack()
 
 
 root = Tk()
