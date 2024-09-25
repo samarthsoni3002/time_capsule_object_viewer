@@ -1,20 +1,30 @@
-# time_capsule_object_viewer
-project name is time capusle object viewer
-it is based on the hackathon theme (back to the future) 
-the project is  a desktop application which displays the image of an object(whose name is entered by the user as an input )and then the user can choose between **past and present** and based upon  the **choice** the user will get the desired output(image of the object in the past or the future) .
-the programming languge used is **python** and the library used to create the user interface is **[tkinter]**
+# Time Capsule Object Viewer
 
-the walk through of the application:
-at the start, the homepage will appear.
-the user will have two choices that are relive the past and dive into the future.
-from there the user can select the desired option
-then based upon the choice,the window of either past or future will open.
-the users 
-**the system requirements are as follows:**
-Operating System:
-Windows 7,10 or 11
-Mac OS X 10.11 or higher, 64-bit
-Linux: RHEL 6/7, 64-bit (almost all libraries also work in Ubuntu)
-x86 64-bit CPU (Intel / AMD architecture)
-4 GB RAM
-5 GB free disk space
+**Time Capsule Object Viewer** is a desktop application inspired by the hackathon theme **"Back to the Future."** The application allows users to explore how objects have changed over time by entering an object's name and choosing between two views: **Past** or **Future**. Based on the user's selection, the app displays an image representing the object either from the past or a possible future.
+
+## Key Features
+- Enter the name of any object to explore its evolution over time.
+- Choose between **Reliving the Past** or **Diving into the Future** for a historical or futuristic representation of the object.
+- Simple and intuitive user interface built using Python's **Tkinter** library.
+
+## Application Walkthrough
+1. **Homepage:** Upon launching the application, you will be presented with the homepage.
+2. **Choice:** Select one of the two options:
+   - **Relive the Past:** View the historical version of the object.
+   - **Dive into the Future:** See a futuristic version of the object.
+3. **Display:** Based on your choice, the application will open a window displaying an image of the object as it might have looked in the past or as it could appear in the future.
+
+## System Requirements
+- **Operating Systems:**
+  - Windows 7, 10, or 11
+  - macOS X 10.11 or higher (64-bit)
+  - Linux: RHEL 6/7 or Ubuntu (64-bit)
+  
+- **Hardware Requirements:**
+  - x86 64-bit CPU (Intel/AMD architecture)
+  - 4 GB RAM
+  - 5 GB free disk space
+
+## Technologies Used
+- **Programming Language:** Python
+- **User Interface Library:** Tkinter
